@@ -66,6 +66,7 @@ document.onkeyup = function(event) {
   var numBlanks = 0;
   var newNumBlanks = 0;
   var yesSound = document.getElementById("yes-sound");
+  var wordOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
   //Checks number of blanks before guess in a turn 
   for (var i = 0; i < letters.length; i++){
@@ -93,13 +94,13 @@ document.onkeyup = function(event) {
 
 
   //Reduces the number of guesses by one if the user guesses the wrong letter and didn't repeat the letter
-  if (numRight === 0 && letters_guessed.textContent.indexOf(userGuess.toUpperCase() + " ") === -1){
+  if (numRight === 0 && letters_guessed.textContent.indexOf(userGuess.toUpperCase() + " ") === -1 && wordOptions.indexOf(userGuess.toLowerCase()) > -1){
     guessesRemaining--;
     guesses_remaining.textContent = "Guesses Remaining: " + guessesRemaining;
   }
 
   //Logs the letters guessed if the letter was not repeated and the letter was wrong
-  if (letters_guessed.textContent.indexOf(userGuess.toUpperCase() + " ") === -1 && numRight === 0){
+  if (letters_guessed.textContent.indexOf(userGuess.toUpperCase() + " ") === -1 && numRight === 0  && wordOptions.indexOf(userGuess.toLowerCase()) > -1){
     letters_guessed.textContent = letters_guessed.textContent + userGuess.toUpperCase() + " ";
   }
   
