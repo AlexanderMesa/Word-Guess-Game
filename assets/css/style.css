@@ -1,0 +1,16 @@
+body{
+    background-image: url("../../assets/images/apple_background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 1000px;
+
+}
+
+#game{
+    font-size: 36px;
+    color: green;
+}
+
+#user-input{
+    padding: 0px 10px 36px 10px;
+    letter-spacing: 5px;
+}
